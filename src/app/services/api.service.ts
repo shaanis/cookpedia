@@ -7,7 +7,8 @@ import { RecipeModel } from '../admin/model/recipeModel';
 })
 export class ApiService {
 
-   serverurl ="http://localhost:3000"
+  //  serverurl ="http://localhost:3000"
+   serverurl ="https://cookpedia-server-dyzx.onrender.com"
 
   constructor(private http:HttpClient) { }
   getAllRecipesApi(){
