@@ -1,0 +1,37 @@
+<div class="row ">
+    <div class="col-lg-1 position-fixed">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-2 "></div>
+    <div class="col-lg-9 overflow-auto ms-5  ">
+        <h1 class="text-center text-warning my-4">All recipe List</h1>
+        <div class="d-flex justify-content-between ">
+            <button routerLink="/admin/recipe/add" class="btn btn-primary">+Add New Recipe</button>
+            <input [(ngModel)]="searchRecipe" type="text" placeholder="Search recipe by Name" class="form-control w-25"></div>
+            <table class="table my-5 shadow">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Cuisine</th>
+                        <th>....</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of allRecipes | search : searchRecipe; track $index; let i =$index) {
+                        <tr>
+                            <td>{{i+1}}</td>
+                            <td>{{item.name}}</td>
+                            <td><img width="70px" [src]="item.image" alt=""></td>
+                            <td>{{item.cuisine}}</td>
+                            <td>
+                                <button routerLink="/admin/recipe/{{item._id}}/edit" class="btn me-1"><i class="fa-solid fa-edit text-primary"></i></button>
+                                <button (click)="deleteRecipe(item._id)" class="btn me-1"><i class="fa-solid fa-trash-can text-primary"></i></button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+    </div>
+</div>

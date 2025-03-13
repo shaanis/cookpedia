@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-lg-2 min-vh-100">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-lg-10 p-5">
+        <h1>All Users Feedback List</h1>
+        <table class="table my-5 shadow">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th> Name</th>
+                    <th>Email </th>
+                    <th> Message</th>
+                     <th> Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of allFeedback; track $index; let i = $index) {
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.msg}}</td>
+                        <td>
+                            @if (item.status == 'pending') {
+                                <div class="d-flex">
+                                    <button (click)="updateFeedbackStatus(item._id,'Approved')" class="btn btn-success me-2"><i class="fa-solid fa-check "></i></button>
+                                    <button (click)="updateFeedbackStatus(item._id,'Rejected')" class="btn btn-danger"><i class="fa-solid fa-x"></i></button>
+                                </div>
+                            }@else if (item.status == 'Approved') {
+                                <button  class="btn btn-success me-2">Approved</button>
+
+                            }@else if (item.status == 'Rejected') {
+                                <button  class="btn btn-danger me-2">Rejected</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

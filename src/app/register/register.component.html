@@ -1,0 +1,36 @@
+<div>
+    <div class="row d-flex align-items-center justify-content-center min-vh-100">
+        <div class="col-lg-4"></div>
+        <div style="width: 350px;" class="col-lg-3 ">
+            <div class="p-5 rounded shadow">
+              <h3 class="fw-bolder"><i class="fa-solid fa-graduation-cap text-success mb-4"></i>Cookpedia</h3>
+              <form [formGroup]="registerForm" (ngSubmit)="register()" class="d-flex flex-column">
+                <input name="username" formControlName="username" class="form-control mb-3" type="text" placeholder="Username"> 
+                @if (registerForm.get('username')?.errors && registerForm.get('username')?.touched) {
+                    <p class="text-danger">invalid username</p>
+                }
+                <input name="email" formControlName="email" class="form-control mb-3" type="text" placeholder="Email"> 
+                @if (registerForm.get('email')?.errors && registerForm.get('email')?.touched) {
+                    <p class="text-danger">invalid username</p>
+                }
+                <input name="password" formControlName="password" class="form-control mb-3" type="password" placeholder="Password">
+                @if (registerForm.get('password')?.errors && registerForm.get('password')?.touched) {
+                    <p class="text-danger">invalid username</p>
+                }
+                <button type="submit" class="text-light btn btn-success flex-grow-1">Register</button>
+              </form>
+            </div>
+        </div>
+        <div class="col-lg-3   d-flex flex-column align-items-center justify-content-center text-justify">
+            <h2 >Create New <br> Account</h2>
+            <p style="margin-left: -40px;">What you will get?</p>
+            <ul class="ms-5">
+                <li>Different Recipes</li>
+                <li>Easy way to make Recipe</li>
+                <li>Save your favourite recipes</li>
+                <li>Download your recipe</li>
+            </ul>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>

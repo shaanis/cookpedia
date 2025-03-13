@@ -1,0 +1,66 @@
+<app-header></app-header>
+<div class="container">
+    <div style="height: 300px;" class="text-center bg-success text-light pt-3">
+        <h1 class="mb-5">Contact Us</h1>
+        <div style="width: 1000px;" class="ms-5 ps-5"><p class="mt-5 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iusto reprehenderit voluptate, omnis dolor consequuntur quasi maxime laboriosam corrupti iste, incidunt aperiam dicta vitae magni? Neque vel dolorum sunt corporis.</p></div>
+
+        
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div style="width: 330px; " class="col-lg-3 text-justify d-flex align-items-center me-2">
+                <div>
+                    <h3>Get in Touch</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat veniam eius eos.</p>
+                    <div class="d-flex">
+                        <div><i style="border-radius: 20px;" class="fa-solid fa-location-dot text-light bg-success p-2 me-3"></i></div>
+                        <div>
+                            <h5>Address</h5>
+                            <p>ABC STREET CALICUT</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div><i style="border-radius: 20px;" class="fa-solid fa-phone text-light bg-success p-2 me-3"></i></div>
+                        <div>
+                            <h5>Phone</h5>
+                            <p>1234567890</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div><i style="border-radius: 20px;" class="fa-solid fa-envelope text-light bg-success p-2 me-3"></i></div>
+                        <div>
+                            <h5>Email</h5>
+                            <p>{{email}}</p>
+                        </div>
+                    </div>
+                    <h5>Follow Us</h5>
+                    <div style="width:150px;" class="d-flex justify-content-between ">
+                      <a href=""><i class="fa-brands fa-facebook text-success"></i></a>
+                      <a href=""><i class="fa-brands fa-instagram text-success"></i></a>
+                      <a href=""><i class="fa-brands fa-twitter text-success"></i></a>
+                      <a href=""><i class="fa-brands fa-youtube text-success"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div style="width: 350px;" class="shadow rounded mb-5 p-5 mt-5">
+                    <form [formGroup]="testimonyForm" (ngSubmit)="addTestimony()" >
+                        <h4 class="text-center mb-4">Client Testimonials</h4>
+                        <input name="name" formControlName="name" class="form-control mt-3" type="text" placeholder="Name">
+                        <input name="email" formControlName="email" class="form-control mt-3" type="text" placeholder="Email">
+                        <textarea name="msg" formControlName="msg" class="form-control mt-3" name="" id="" placeholder="Message"></textarea>
+                        <p class="mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit.  </p>
+                        <button type="submit" class="btn btn-success float-right">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+    <div class="container-fluid p-0">
+        <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.7577439403103!2d76.0198655745179!3d10.829842258207263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b9006fe79d03%3A0x30a7ae1e13b5ea39!2sZaina%20Solutions!5e0!3m2!1sen!2sin!4v1740535194326!5m2!1sen!2sin" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+</div>
+<app-footer></app-footer>

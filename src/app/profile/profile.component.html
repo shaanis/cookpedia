@@ -1,0 +1,33 @@
+<app-header></app-header>
+ 
+ <div class="container my-5">
+    <!-- profile updation -->
+     <div class="my-5 text-center">
+        <h1>My Profile</h1>
+        <label class="my-3">
+            <input (change)="getFile($event)" style="display: none;" type="file">
+            <img width="200px" height="200px" [src]="profilImg" alt="">
+        </label>
+        <br>
+        <button (click)="updateProfile()" class="btn btn-success m-3">update profile</button>
+     </div>
+     <!-- dowload recipe list -->
+      <h3 class="ms-3 ">Downloads</h3>
+        <div class="row my-3">
+            @if (allUserDowloadList.length > 0) {
+              @for (item of allUserDowloadList; track $index) {
+                <div class="col-lg-4">
+                    <div class="p-3">
+                        <img class="card-img-top" [src]="item.recipeImg" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.recipeName}}</h5>
+                        </div>
+                    </div>
+                </div>
+              }
+            }@else {
+                <div class="text-danger">No downloads</div>
+            }
+        </div>
+     
+<app-footer></app-footer>

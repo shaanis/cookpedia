@@ -1,0 +1,79 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row p-5 bg-success">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4 text-light">
+     <h1>The Easiest way <br> To Make Your <br> Favourite Meals</h1>
+     <p style="text-align: justify;" class="my-4">Discover 100+ recipes in your hand with the best recipe. Help you to find the easiest way to cook.</p>
+     <a routerLink="/all-recipes" style="background-color: green;" class="btn text-light">Explore Recipes</a>
+    </div>
+    <div class="col-lg-6">
+        <img src="https://www.pngall.com/wp-content/uploads/2/Healthy-Meal.png" class=" w-50 landingImg " style="margin-left: 150px;" alt="">
+    </div>
+  </div>
+
+  <!-- popular recipes -->
+   <div class=" my-5 p-5">
+    <h1>Popular Recipes Of the Week</h1>
+    <div class=" d-flex justify-content-between">
+        <p>Our Most popular recipes of the week</p>
+        <a routerLink="/all-recipes">View All</a>
+    </div>
+    <div class="row my-3">
+        @for (recipe of allRecipes; track $index) {
+            <div class="col-lg-4">
+                <div class="p-3">
+                    <img class="card-img-top" [src]="recipe.image" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{recipe.name}}</h5>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+   </div>
+
+   <!-- banner -->
+    <div style="height: 400px; background-image:url('https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-black-meat-western-food-banner-background-image_194600.jpg'); background-size:contain " class="row align-items-center my-5">
+        <div class="col-lg-6"></div>
+        <div class="col-lg-6">
+            <div class="bg-light rounded p-5 w-75">
+                <h3>50+ Recipes That Very Quick And Fast</h3>
+                <p class="text-secondary mt-3"> Find the perfect food ideas to start your day with the quick and easiest way.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- download app -->
+     <div style="height: 350px;" class="my-5 row align-items-center text-light bg-success rounded p-5">
+<div class="col-lg-6">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.oTq3G0IIaWWI5mZdqTH5KgHaCi&pid=Api&P=0&h=180" alt="">
+    
+</div>    <div class="col-lg-6 text-center" >
+    <h1>Download app</h1>
+    <h5 class="my-3">Download the App store or Google play for better experience</h5>
+    <img src="https://tse4.mm.bing.net/th?id=OIP.oTq3G0IIaWWI5mZdqTH5KgHaCi&pid=Api&P=0&h=180" width="150px" alt="">
+    <img src="https://tse4.mm.bing.net/th?id=OIP.oTq3G0IIaWWI5mZdqTH5KgHaCi&pid=Api&P=0&h=180" width="150px" alt="">
+ </div>    
+     </div>
+
+     <!-- testimonials -->
+      <div class="text-center my-5">
+        <h1>Client testimonials</h1>
+        <marquee>
+            <div class="d-flex my-5">
+                <!-- testimonials -->
+                 @for (item of approvedFeedback; track $index) {
+                    <div class="rounded border w-100 p-3 me-2">
+                        <h5>{{item.name}}</h5>
+                        <p style="white-space: normal; width : 100%; text-align: justify">
+                            {{item.msg}}
+                        </p>
+                     </div>
+                 }
+            </div>
+        </marquee>
+      </div>
+     
+</div>
+<app-footer></app-footer>
